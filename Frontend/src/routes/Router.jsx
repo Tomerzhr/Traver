@@ -12,6 +12,7 @@ import TourPageDetails from "../Pages/Tours/TourPageDetails";
 import ErrorPage from "../Pages/ErrorPage";
 import EditTour from "../Pages/Tours/EditTour";
 import Reviews from "../Pages/Reviews/Reviews";
+import AddReview from "../Pages/Reviews/AddReview";
 
 export default function Router() {
   return (
@@ -27,6 +28,7 @@ export default function Router() {
       <Route path={`${ROUTS.EDIT_TOUR}/:tourId`} element={<EditTour />} />
       <Route path={`${ROUTS.TOUR_DETAILS}/:tourId`} element={<TourPageDetails />} />
       <Route path={`${ROUTS.REVIEWS}/:tourId`} element={<Reviews />} />
+      <Route path={`${ROUTS.CREATE_REVIEW}/:tourId`} element={<AddReview />} />
 
       <Route path="*" element={<ErrorPage />} />
     </Routes>

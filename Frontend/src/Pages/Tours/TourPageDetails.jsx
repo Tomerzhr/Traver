@@ -142,6 +142,9 @@ export default function TourPageDetails() {
             <GlobalButton margin="10px 0" onClick={() => navigate(`${ROUTS.REVIEWS}/${tour.id}`)}>
               Reviews
             </GlobalButton>
+            <GlobalButton onClick={() => navigate(`${ROUTS.CREATE_REVIEW}/${tour.id}`)}>
+              Add Review
+            </GlobalButton>
           </div>
         </Box>
 

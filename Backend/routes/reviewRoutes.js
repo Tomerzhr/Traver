@@ -17,7 +17,7 @@ reviewRouter.use(protect);
 reviewRouter
   .route('/')
   .get(getAllReviews)
-  .post(restrictTo('user'), createReview);
+  .post(restrictTo('user', 'admin'), createReview);
 
 reviewRouter
   .route('/:id')

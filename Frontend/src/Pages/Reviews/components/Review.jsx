@@ -3,6 +3,8 @@ import quote from "../../../assets/icons/quote.png";
 import { Box } from "@mui/material";
 import RatingStar from "./RatingStar";
 import PropTypes from "prop-types";
+import { UseUserProvider } from "../../../Users/providers/userProvider";
+import GlobalButton from "../../../components/GlobalButton";
 
 const ReviewContainer = styled(Box)`
   position: relative;
@@ -59,7 +61,11 @@ export default function Review({
   userTitle = "Traveler",
   reviewText,
   rating,
+  reviewId,
+  onDelete,
 }) {
+  const { user } = UseUserProvider();
+
   return (
     <ReviewContainer className="review" sx={{ width: { xs: "100%", md: "50%" } }}>
       <img className="quote" src={quote} alt="quote icon" />
@@ -73,6 +79,11 @@ export default function Review({
       <hr />
       <p>{reviewText}</p>
       <RatingStar rating={rating} />
+      {user && user.role === "admin" && (
+        <GlobalButton onClick={() => onDelete(reviewId)} margin="10px 0">
+          Delete
+        </GlobalButton>
+      )}
     </ReviewContainer>
   );
 }
@@ -83,4 +94,6 @@ Review.propTypes = {
   userTitle: PropTypes.string,
   reviewText: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
+  reviewId: PropTypes.string.isRequired,
+  onDelete: PropTypes.func,
 };

@@ -15,6 +15,7 @@ const ROUTS = {
   ADMIN: "/admin",
   USERS: "/users",
   REVIEWS: "/reviews",
+  CREATE_REVIEW: "/create-review",
 };
 
 export default ROUTS;

@@ -23,7 +23,6 @@ export default function EditTour() {
     const fetchTourData = async () => {
       const data = await handelGetTour(tourId);
       reset(data);
-      console.log(data);
     };
     fetchTourData();
   }, [tourId, handelGetTour, methods, reset]);
