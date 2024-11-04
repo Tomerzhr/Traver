@@ -11,9 +11,6 @@ const DeleteContainer = styled.div`
   font-size: 0.9rem;
   font-weight: 300;
   color: #000000;
-  padding: 20px;
-  background-color: #f7f7f7;
-  border-top: 1px solid #e0e0e0;
 `;
 
 export default function DeleteTourModal({ isModalOpen, onClose, handelDelete }) {
